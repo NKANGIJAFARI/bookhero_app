@@ -4,8 +4,12 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 const Stack = createNativeStackNavigator();
 
 const StackNavigator = () => {
-  <Stack.Navigator>
-    <Stack.Screen name='Home' component={Home} />
-    <Stack.Screen name='Scanner' component={scanScreen} />
-  </Stack.Navigator>;
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name='Scanner' component={scanScreen} />
+      <Stack.Screen name='Home' component={Home} />
+    </Stack.Navigator>
+  );
 };
+
+export default StackNavigator;
