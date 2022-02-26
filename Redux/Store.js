@@ -21,10 +21,7 @@ const serializableMiddleware = createSerializableStateInvariantMiddleware({
 
 export default configureStore({
   reducer: {
-    SlotsState: SlotsStateReducer,
     UserState: userStateReducer,
-    PatientDetails: PatientDetailsReducer,
-    bookingsState: BookingsReducer,
     AlertState: AlertStateReducer,
     loadingState: loadingStateReducer,
   },
