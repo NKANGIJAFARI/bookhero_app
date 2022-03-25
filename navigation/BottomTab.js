@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { TouchableOpacity, StyleSheet } from 'react-native';
-import HomeScreen from '../screens/Home/HomeScreen';
-import ScheduleScreen from '../screens/Schedule/ScheduleScreen';
-import ChatScreen from '../screens/Chat/ChatScreen';
-import ProfileScreen from '../screens/Profile/ProfileScreen';
+import HomeScreen from '../Screens/HomeScreen/HomeScreen';
+import ScheduleScreen from '../Screens/Schedule/ScheduleScreen';
+import ChatScreen from '../Screens/Chat/ChatScreen';
+import ProfileScreen from '../Screens/Profile/ProfileScreen';
 import { Entypo } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
@@ -30,7 +30,7 @@ export default function BottomTabScreen() {
           headerShown: false,
         }}
       />
-      <Tab.Screen
+      {/* <Tab.Screen
         name='Schedule'
         component={ScheduleScreen}
         options={{
@@ -44,7 +44,7 @@ export default function BottomTabScreen() {
             ),
           headerShown: false,
         }}
-      />
+      /> 
       <Tab.Screen
         name='Chat'
         component={ChatScreen}
@@ -74,7 +74,7 @@ export default function BottomTabScreen() {
             ),
           headerShown: false,
         }}
-      />
+      />*/}
     </Tab.Navigator>
   );
 }
