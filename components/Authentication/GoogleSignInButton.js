@@ -7,18 +7,18 @@ import { auth } from '../../firebase';
 import createUserInDB from '../../AppFunctions/createUserInDB.js';
 import { useDispatch } from 'react-redux';
 import { setLoading } from '../../Redux/Slices/LoadingSlice';
-import {
-  GOOGLE_IOS_CLIENT_ID,
-  GOOGLE_ANDROID_CLIENT_ID,
-  GOOGLE_EXPO_CLIENT_ID,
-} from '@env';
+// import {
+//   GOOGLE_IOS_CLIENT_ID,
+//   GOOGLE_ANDROID_CLIENT_ID,
+//   GOOGLE_EXPO_CLIENT_ID,
+// } from '@env';
 
 const GoogleSignInButton = ({ text }) => {
   const dispatch = useDispatch();
 
   const config = {
-    iosClientId: GOOGLE_IOS_CLIENT_ID,
-    androidClientId: GOOGLE_ANDROID_CLIENT_ID,
+    iosClientId: 'GOOGLE_IOS_CLIENT_ID',
+    androidClientId: 'GOOGLE_ANDROID_CLIENT_ID',
     scope: ['profile', 'email'],
     Permissions: ['public_profile', 'email', 'gender', 'location'],
   };
