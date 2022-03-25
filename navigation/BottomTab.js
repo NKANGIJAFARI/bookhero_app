@@ -14,7 +14,8 @@ const Tab = createBottomTabNavigator();
 export default function BottomTabScreen() {
   return (
     <Tab.Navigator>
-      <Tab.Screenr
+      <Tab.Screen
+        name='Home'
         component={HomeScreen}
         options={{
           tabBarIcon: ({ tintColor, focused }) =>
@@ -24,6 +25,22 @@ export default function BottomTabScreen() {
               </TouchableOpacity>
             ) : (
               <Entypo name='home' size={30} color={tintColor} />
+            ),
+          headerShown: false,
+        }}
+      />
+
+      <Tab.Screen
+        name='Profile'
+        component={ProfileScreen}
+        options={{
+          tabBarIcon: ({ tintColor, focused }) =>
+            focused ? (
+              <TouchableOpacity style={styles.circleStyle}>
+                <Ionicons name='person' size={24} color='white' />
+              </TouchableOpacity>
+            ) : (
+              <Ionicons name='person' size={24} color={tintColor} />
             ),
           headerShown: false,
         }}
@@ -58,21 +75,6 @@ export default function BottomTabScreen() {
           headerShown: false,
         }}
       />*/}
-      <Tab.Screen
-        name='Profile'
-        component={ProfileScreen}
-        options={{
-          tabBarIcon: ({ tintColor, focused }) =>
-            focused ? (
-              <TouchableOpacity style={styles.circleStyle}>
-                <Ionicons name='person' size={24} color={tintColor} />
-              </TouchableOpacity>
-            ) : (
-              <Ionicons name='person' size={24} color={tintColor} />
-            ),
-          headerShown: false,
-        }}
-      />
     </Tab.Navigator>
   );
 }

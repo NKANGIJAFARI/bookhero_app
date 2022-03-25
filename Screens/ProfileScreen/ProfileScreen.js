@@ -19,6 +19,8 @@ import LogOutDialog from '../../components/HomeComponents/LogOutDialog';
 import UserInfo from '../../components/ProfileScreen/UserInfo';
 import { useNavigation } from '@react-navigation/native';
 
+LogOutDialog;
+
 const ProfileScreen = () => {
   const navigation = useNavigation();
 
