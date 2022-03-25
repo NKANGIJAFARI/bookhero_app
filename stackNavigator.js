@@ -2,6 +2,9 @@ import React, { useEffect } from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import ScannerScreen from './Screens/ScannerScreen';
 import Home from './Screens/Home';
+import ForgotPasswordScreen from './Screens/Auth/ForgotPasswordScreen';
+import WelcomeScreen from './Screens/Auth/WelcomeScreen';
+import RegisterScreen from './Screens/Auth/RegisterScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -10,6 +13,30 @@ const StackNavigator = () => {
     <Stack.Navigator>
       <Stack.Screen name='Scanner' component={ScannerScreen} />
       <Stack.Screen name='Home' component={Home} />
+
+      <Stack.Screen
+        name='Welcome'
+        component={WelcomeScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+
+      <Stack.Screen
+        name='Register'
+        component={RegisterScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+
+      <Stack.Screen
+        name='ForgotPasswordScreen'
+        component={ForgotPasswordScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
     </Stack.Navigator>
   );
 };

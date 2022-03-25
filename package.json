@@ -17,6 +17,7 @@
     "@types/react-redux": "^7.1.22",
     "expo": "~44.0.0",
     "expo-barcode-scanner": "~11.2.0",
+    "expo-linear-gradient": "~11.0.3",
     "expo-status-bar": "~1.2.0",
     "immutable": "^4.0.0",
     "moment": "^2.29.1",
