@@ -2,6 +2,7 @@ import * as React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { TouchableOpacity, StyleSheet } from 'react-native';
 import HomeScreen from '../Screens/HomeScreen/HomeScreen';
+import ProfileScreen from '../Screens/ProfileScreen/ProfileScreen';
 import { Colors } from '../constant/styles';
 import { Entypo } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
@@ -13,8 +14,7 @@ const Tab = createBottomTabNavigator();
 export default function BottomTabScreen() {
   return (
     <Tab.Navigator>
-      <Tab.Screen
-        name='Home'
+      <Tab.Screenr
         component={HomeScreen}
         options={{
           tabBarIcon: ({ tintColor, focused }) =>
@@ -57,7 +57,7 @@ export default function BottomTabScreen() {
             ),
           headerShown: false,
         }}
-      />
+      />*/}
       <Tab.Screen
         name='Profile'
         component={ProfileScreen}
@@ -72,7 +72,7 @@ export default function BottomTabScreen() {
             ),
           headerShown: false,
         }}
-      />*/}
+      />
     </Tab.Navigator>
   );
 }
