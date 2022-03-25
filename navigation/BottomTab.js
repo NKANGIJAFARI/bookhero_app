@@ -2,6 +2,7 @@ import * as React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { TouchableOpacity, StyleSheet } from 'react-native';
 import HomeScreen from '../Screens/HomeScreen/HomeScreen';
+import { Colors } from '../constant/styles';
 import { Entypo } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
@@ -19,10 +20,10 @@ export default function BottomTabScreen() {
           tabBarIcon: ({ tintColor, focused }) =>
             focused ? (
               <TouchableOpacity style={styles.circleStyle}>
-                <Entypo name='home' size={24} color={tintColor} />
+                <Entypo name='home' size={32} color='white' />
               </TouchableOpacity>
             ) : (
-              <Entypo name='home' size={24} color={tintColor} />
+              <Entypo name='home' size={30} color={tintColor} />
             ),
           headerShown: false,
         }}
@@ -81,6 +82,8 @@ const styles = StyleSheet.create({
     height: 40.0,
     width: 50.0,
     backgroundColor: '#F5F5F5',
+    backgroundColor: Colors.primary,
+
     borderRadius: 25.0,
     alignItems: 'center',
     justifyContent: 'center',
