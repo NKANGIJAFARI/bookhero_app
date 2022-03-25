@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-// import { AuthProvider } from './Hooks/useAuth';
+import { AuthProvider } from './Hooks/useAuth';
 import StackNavigator from './StackNavigator';
 import * as Font from 'expo-font';
 import { Provider } from 'react-redux';
@@ -38,11 +38,11 @@ const App = () => {
     <>
       {fontLoaded && (
         <Provider store={Store}>
-          {/* <AuthProvider> */}
-          <NavigationContainer>
-            <StackNavigator />
-          </NavigationContainer>
-          {/* </AuthProvider> */}
+          <AuthProvider>
+            <NavigationContainer>
+              <StackNavigator />
+            </NavigationContainer>
+          </AuthProvider>
         </Provider>
       )}
     </>
