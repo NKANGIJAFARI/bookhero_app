@@ -6,6 +6,7 @@ import ForgotPasswordScreen from './Screens/Auth/ForgotPasswordScreen';
 import WelcomeScreen from './Screens/Auth/WelcomeScreen';
 import RegisterScreen from './Screens/Auth/RegisterScreen';
 import SplashScreen from './Screens/SplashScreen';
+import BottomTabScreen from './navigation/BottomTab';
 
 const Stack = createNativeStackNavigator();
 
@@ -19,10 +20,16 @@ const StackNavigator = () => {
           headerShown: false,
         }}
       />
-
       <Stack.Screen name='Scanner' component={ScannerScreen} />
       <Stack.Screen name='Home' component={Home} />
 
+      <Stack.Screen
+        name='BottomTabScreen'
+        component={BottomTabScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
       <Stack.Screen
         name='Welcome'
         component={WelcomeScreen}
@@ -30,7 +37,6 @@ const StackNavigator = () => {
           headerShown: false,
         }}
       />
-
       <Stack.Screen
         name='Register'
         component={RegisterScreen}
@@ -38,7 +44,6 @@ const StackNavigator = () => {
           headerShown: false,
         }}
       />
-
       <Stack.Screen
         name='ForgotPasswordScreen'
         component={ForgotPasswordScreen}
