@@ -10,6 +10,7 @@ import {
   StyleSheet,
   BackHandler,
   Alert,
+  ScrollView,
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Fonts, Sizes } from '../../constant/styles';
@@ -24,7 +25,6 @@ import {
 } from '../../AppFunctions/Auth/FormValidators';
 import LoadingComp from '../../components/General/LoadingComp';
 import { Colors } from '../../constant/styles';
-import { ScrollView } from 'react-native-gesture-handler';
 
 const WelcomeScreen = ({ navigation }) => {
   const dispatch = useDispatch();

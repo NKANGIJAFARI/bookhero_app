@@ -1,5 +1,4 @@
 import { StyleSheet, Text, View } from 'react-native';
-import FacebookSigninButton from '../../components/Authentication/FacebookSiginButton';
 import GoogleSigninButton from '../../components/Authentication/GoogleSignInButton';
 import OtherRegisterOptions from './OtherRegisterOptions';
 import { Fonts, Sizes } from '../../constant/styles';
@@ -9,7 +8,6 @@ const SocialMediaOptions = ({ screen }) => {
     <>
       <OtherRegisterOptions logiOrRegister={screen} />
       <View style={styles.container}>
-        <FacebookSigninButton text={'Facebook'} />
         <GoogleSigninButton text={'Google'} />
       </View>
     </>
