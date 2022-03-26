@@ -40,8 +40,8 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 0.7,
-    // height: '70%',
+    flex: 1,
+    height: '70%',
     // flexDirection: 'column',
     // justifyContent: 'center',
     alignItems: 'center',

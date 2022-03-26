@@ -30,6 +30,7 @@
     "expo-linear-gradient": "~11.0.3",
     "expo-location": "~14.0.1",
     "expo-navigation-bar": "~1.1.1",
+    "expo-permissions": "~13.1.0",
     "expo-splash-screen": "~0.14.1",
     "expo-system-ui": "~1.1.0",
     "firebase": "^9.6.1",

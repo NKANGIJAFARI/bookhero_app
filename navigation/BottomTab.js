@@ -7,6 +7,7 @@ import ScannerScreen from '../Screens/ScannerScreen/ScannerScreen';
 import { Colors } from '../constant/styles';
 import { Entypo } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
+import { AntDesign } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -37,11 +38,22 @@ export default function BottomTabScreen() {
         options={{
           tabBarIcon: ({ tintColor, focused }) =>
             focused ? (
-              <TouchableOpacity style={styles.circleStyle}>
-                <FontAwesome5 name='calendar-alt' size={24} color={tintColor} />
+              <TouchableOpacity
+                style={{
+                  height: 50.0,
+                  width: 50.0,
+                  backgroundColor: '#F5F5F5',
+                  backgroundColor: Colors.primary,
+                  borderRadius: 25.0,
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  position: 'absolute',
+                  bottom: 0,
+                }}>
+                <AntDesign name='pluscircleo' size={45} color='black' />
               </TouchableOpacity>
             ) : (
-              <FontAwesome5 name='calendar-alt' size={24} color={tintColor} />
+              <AntDesign name='pluscircleo' size={45} color='black' />
             ),
           headerShown: false,
         }}
@@ -98,11 +110,10 @@ export default function BottomTabScreen() {
 
 const styles = StyleSheet.create({
   circleStyle: {
-    height: 40.0,
+    height: 50.0,
     width: 50.0,
     backgroundColor: '#F5F5F5',
     backgroundColor: Colors.primary,
-
     borderRadius: 25.0,
     alignItems: 'center',
     justifyContent: 'center',
