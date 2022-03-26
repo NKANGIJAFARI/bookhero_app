@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import ScannerScreen from './Screens/ScannerScreen';
 import ForgotPasswordScreen from './Screens/Auth/ForgotPasswordScreen';
 import WelcomeScreen from './Screens/Auth/WelcomeScreen';
 import RegisterScreen from './Screens/Auth/RegisterScreen';
@@ -27,7 +26,6 @@ const StackNavigator = () => {
 
       {user.authenticated ? (
         <>
-          <Stack.Screen name='Scanner' component={ScannerScreen} />
           <Stack.Screen
             name='BottomTabScreen'
             component={BottomTabScreen}

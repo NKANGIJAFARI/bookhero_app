@@ -3,6 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { TouchableOpacity, StyleSheet } from 'react-native';
 import HomeScreen from '../Screens/HomeScreen/HomeScreen';
 import ProfileScreen from '../Screens/ProfileScreen/ProfileScreen';
+import ScannerScreen from '../Screens/ScannerScreen/ScannerScreen';
 import { Colors } from '../constant/styles';
 import { Entypo } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
@@ -25,6 +26,22 @@ export default function BottomTabScreen() {
               </TouchableOpacity>
             ) : (
               <Entypo name='home' size={30} color={tintColor} />
+            ),
+          headerShown: false,
+        }}
+      />
+
+      <Tab.Screen
+        name='New Sale'
+        component={ScannerScreen}
+        options={{
+          tabBarIcon: ({ tintColor, focused }) =>
+            focused ? (
+              <TouchableOpacity style={styles.circleStyle}>
+                <FontAwesome5 name='calendar-alt' size={24} color={tintColor} />
+              </TouchableOpacity>
+            ) : (
+              <FontAwesome5 name='calendar-alt' size={24} color={tintColor} />
             ),
           headerShown: false,
         }}
