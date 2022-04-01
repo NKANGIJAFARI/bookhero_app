@@ -6,10 +6,11 @@ export default function App() {
   const [hasPermission, setHasPermission] = useState(null);
   const [scanned, setScanned] = useState(false);
 
-  console.log('hasPermission', scanned);
+  console.log(hasPermission, scanned);
 
   useEffect(() => {
     (async () => {
+      setScanned(false);
       const { status } = await BarCodeScanner.requestPermissionsAsync();
       setHasPermission(status === 'granted');
     })();
@@ -31,7 +32,7 @@ export default function App() {
     <View style={styles.container}>
       <BarCodeScanner
         onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
-        style={styles.barcode}
+        style={StyleSheet.absoluteFillObject}
       />
       {scanned && (
         <Button title={'Tap to Scan Again'} onPress={() => setScanned(false)} />
@@ -43,15 +44,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    height: '70%',
-    // flexDirection: 'column',
-    // justifyContent: 'center',
-    alignItems: 'center',
-    width: '100%',
-  },
-
-  barcode: {
-    height: '100%',
-    width: '100%',
+    flexDirection: 'column',
+    justifyContent: 'center',
   },
 });
