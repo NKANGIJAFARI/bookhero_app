@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StatusBar, SafeAreaView } from 'react-native';
+import { View, Text, StatusBar, SafeAreaView, StyleSheet } from 'react-native';
 import ViewAllScreen from '../../components/HomeScreen/ViewAll';
 import Test from '../../components/HomeScreen/Test';
 import { Colors, Sizes } from '../../constant/styles';
