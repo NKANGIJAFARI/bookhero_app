@@ -6,6 +6,7 @@ import RegisterScreen from './Screens/Auth/RegisterScreen';
 import SplashScreen from './Screens/SplashScreen';
 import BottomTabScreen from './navigation/BottomTab';
 import UsersScreen from './Screens/Users/UsersScreen';
+import CreateUserScreen from './Screens/Users/CreateUserScreen';
 
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -38,6 +39,14 @@ const StackNavigator = () => {
           <Stack.Screen
             name='Users'
             component={UsersScreen}
+            options={{
+              headerShown: false,
+            }}
+          />
+
+          <Stack.Screen
+            name='Create User'
+            component={CreateUserScreen}
             options={{
               headerShown: false,
             }}
