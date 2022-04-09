@@ -1,9 +1,8 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { onAuthStateChanged } from '@firebase/auth';
 import { auth } from '../firebase';
-import { setUser as addUserToStore } from '../Redux/Slices/UserSlice';
+import { addUserToStore } from '../Redux/Slices/UserSlice';
 import { useDispatch } from 'react-redux';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const AuthContext = createContext({});
 
@@ -12,28 +11,33 @@ export const AuthProvider = ({ children }) => {
 
   const [user, setUser] = useState(null);
 
-  useEffect(() => {
-    const unSubscribe = onAuthStateChanged(auth, async (authUser) => {
-      if (authUser) {
-        setUser(authUser);
-        await AsyncStorage.setItem('isLoggedInBefore', 'true');
+  useEffect(
+    () =>
+      onAuthStateChanged(auth, (authUser) => {
+        if (authUser) {
+          auth.currentUser.getIdTokenResult().then((idToken) => {
+            const userObject = {
+              displayName: authUser.displayName,
+              email: authUser.email,
+              photoURL: authUser.photoURL,
+              uid: authUser.uid,
+              authenticated: true,
+              isAdmin: idToken.claims?.admin ? true : false,
+            };
 
-        dispatch(
-          addUserToStore({
-            displayName: authUser.displayName,
-            email: authUser.email,
-            photoURL: authUser.photoURL,
-            userID: authUser.uid,
-            authenticated: true,
-          }),
-        );
-      } else {
-        setUser(null);
-      }
-    });
+            setUser(userObject);
+            dispatch(addUserToStore(userObject));
+          });
+          // console.log(auth.currentUser.getIdToken(true));
 
-    return () => unSubscribe();
-  }, []);
+          // console.log(authUser);
+        } else {
+          setUser(null);
+          console.log('user logged out');
+        }
+      }),
+    [],
+  );
 
   return (
     <AuthContext.Provider value={{ user: user }}>

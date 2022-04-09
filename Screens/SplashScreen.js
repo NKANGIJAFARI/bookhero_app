@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Image, View } from 'react-native';
 import { onAuthStateChanged } from '@firebase/auth';
 import { auth } from '../firebase';
-import { setUser as addUserToStore } from '../Redux/Slices/UserSlice';
+import { addUserToStore } from '../Redux/Slices/UserSlice';
 import { useNavigation } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useDispatch } from 'react-redux';
@@ -21,46 +21,31 @@ const SplashScreen = () => {
 
       if (authUser) {
         const idToken = await auth.currentUser.getIdTokenResult();
+        const userObject = {
+          displayName: authUser.displayName,
+          email: authUser.email,
+          photoURL: authUser.photoURL,
+          uid: authUser.uid,
+          authenticated: true,
+          isAdmin: idToken.claims.admin ? true : false,
+        };
 
-        if (idToken.claims.staff === true) {
-          console.log('staff');
-        } else if (user.authenticated === false) {
-          dispatch(
-            addUserToStore({
-              displayName: authUser.displayName,
-              email: authUser.email,
-              photoURL: authUser.photoURL,
-              userID: authUser.uid,
-              authenticated: true,
-            }),
-          );
+        addUserToStore(userObject);
+        dispatch(addUserToStore(userObject));
 
-          navigation.reset({
-            index: 0,
-            routes: [{ name: 'BottomTabScreen' }],
-          });
-        } else {
-          navigation.reset({
-            index: 0,
-            routes: [{ name: 'BottomTabScreen' }],
-          });
-        }
+        navigation.reset({
+          index: 0,
+          routes: [{ name: 'BottomTabScreen' }],
+        });
       } else {
-        if (isLoggedInBefore === 'true') {
-          navigation.reset({
-            index: 0,
-            routes: [{ name: 'Welcome' }],
-          });
-        } else {
-          navigation.reset({
-            index: 0,
-            routes: [{ name: 'Register' }],
-          });
-        }
+        navigation.reset({
+          index: 0,
+          routes: [{ name: 'Welcome' }],
+        });
       }
     });
 
-    return () => unSubscribe();
+    return unSubscribe;
   }, []);
 
   return (

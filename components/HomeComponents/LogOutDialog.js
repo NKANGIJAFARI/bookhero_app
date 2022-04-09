@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import { Fonts, Colors, Sizes } from '../../constant/styles';
 import Dialog from 'react-native-dialog';
-import { setUser } from '../../Redux/Slices/UserSlice';
+import { addUserToStore } from '../../Redux/Slices/UserSlice';
 import { signOut } from '@firebase/auth';
 import { auth } from '../../firebase';
 import { useDispatch } from 'react-redux';
@@ -19,16 +19,15 @@ const LogOutDialog = ({ setIsLogout, showDialog }) => {
   const dispatch = useDispatch();
 
   //This is a signout functiona nd when triggered, we shall dispatch an empty user object
-  const logOut = async () => {
+  const logOut = () => {
     signOut(auth)
       .then(() => {
         console.log('logged out');
       })
       .catch((error) => console.log(error))
       .finally(() => {
-        setIsLogout(false);
         dispatch(
-          setUser({
+          addUserToStore({
             displayName: '',
             email: '',
             photoURL: '',
@@ -68,7 +67,7 @@ const LogOutDialog = ({ setIsLogout, showDialog }) => {
             activeOpacity={0.9}
             onPress={async () => {
               setIsLogout(false);
-              await logOut();
+              logOut();
             }}
             style={styles.logOutButtonStyle}>
             <Text style={{ ...Fonts.white20Regular }}>Log out</Text>

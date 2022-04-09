@@ -5,7 +5,7 @@ const initialState = {
     displayName: '',
     email: '',
     photoURL: '',
-    userID: '',
+    uid: '',
     authenticated: false,
   },
 };
@@ -14,12 +14,12 @@ const userSlice = createSlice({
   name: 'userState',
   initialState,
   reducers: {
-    setUser: (state, action) => {
+    addUserToStore: (state, action) => {
       state.user = action.payload;
     },
   },
 });
 
-export const { setUser } = userSlice.actions;
+export const { addUserToStore } = userSlice.actions;
 
 export default userSlice.reducer;
