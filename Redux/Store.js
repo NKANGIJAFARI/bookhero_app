@@ -7,6 +7,7 @@ import {
 import userStateReducer from './Slices/UserSlice';
 import loadingStateReducer from './Slices/LoadingSlice';
 import AlertStateReducer from './Slices/AlertSlice';
+import usersStateReducer from './Slices/UsersSlice';
 
 // Augment middleware to consider Immutable.JS iterables serializable
 const isSerializable = (value) => Iterable.isIterable(value) || isPlain(value);
@@ -22,6 +23,7 @@ const serializableMiddleware = createSerializableStateInvariantMiddleware({
 export default configureStore({
   reducer: {
     UserState: userStateReducer,
+    UsersState: usersStateReducer,
     AlertState: AlertStateReducer,
     loadingState: loadingStateReducer,
   },
