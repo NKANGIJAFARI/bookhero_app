@@ -53,7 +53,7 @@ export default function BottomTabScreen() {
                 <AntDesign name='pluscircleo' size={45} color='black' />
               </TouchableOpacity>
             ) : (
-              <AntDesign name='pluscircleo' size={45} color='black' />
+              <AntDesign name='pluscircleo' size={35} color='black' />
             ),
           headerShown: false,
         }}
