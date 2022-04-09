@@ -14,7 +14,6 @@ const Stack = createNativeStackNavigator();
 
 const StackNavigator = () => {
   const { user } = useSelector((state) => state.UserState);
-  console.log('user', user);
 
   return (
     <Stack.Navigator initialRouteName='Splash'>

@@ -15,7 +15,6 @@ const UsersList = () => {
 
   const { users } = useSelector((state) => state.UsersState);
   const { user } = useSelector((state) => state.UserState);
-  console.log('user', user);
 
   const { loadingState } = useSelector((state) => state.loadingState);
 

@@ -6,8 +6,6 @@ import { useSelector } from 'react-redux';
 const UserInfo = () => {
   const { user } = useSelector((state) => state.UserState);
 
-  console.log('user', user);
-
   return (
     <View style={styles.profileInfoContainerStyle}>
       <View

@@ -13,8 +13,6 @@ const createUser = async (data) => {
 
     const response = result.data;
 
-    console.log('createUser response', response);
-
     if (response.data.uid) {
       const createdUser = {
         email: response.data.email,
