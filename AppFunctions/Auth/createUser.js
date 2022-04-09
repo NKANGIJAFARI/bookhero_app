@@ -3,7 +3,6 @@ import { functions } from '../../firebase.js';
 import createUserInDB from '../../AppFunctions/createUserInDB.js';
 
 const createUser = async (data) => {
-  console.log('createUser', data);
   const createNewUser = httpsCallable(functions, 'createNewUser');
   data.phoneNumber = `+971${data.phoneNumber.replace(/\s+/g, '')}`;
   // data.phoneNumber = '+971614421552';
@@ -16,7 +15,7 @@ const createUser = async (data) => {
     if (response.data.uid) {
       const createdUser = {
         email: response.data.email,
-        name: response.data.displayName,
+        displayName: response.data.displayName,
         photoUrl: response.data.photoUrl ? response.data.photoUrl : 'no image',
         phoneNumber: response.data.phoneNumber
           ? response.data.phoneNumber
