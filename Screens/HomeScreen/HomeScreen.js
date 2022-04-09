@@ -1,11 +1,15 @@
-import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
+import { View, Text, StatusBar, SafeAreaView } from 'react-native';
+import ViewAllScreen from '../../components/HomeScreen/ViewAll';
+import Test from '../../components/HomeScreen/Test';
+import { Colors, Sizes } from '../../constant/styles';
 
 const HomeScreen = () => {
   return (
-    <View>
-      <Text>HomeScreen</Text>
-    </View>
+    <SafeAreaView style={{ flex: 1 }}>
+      <StatusBar backgroundColor={Colors.primary} />
+      <ViewAllScreen />
+    </SafeAreaView>
   );
 };
 
