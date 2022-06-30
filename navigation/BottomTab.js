@@ -6,9 +6,7 @@ import ProfileScreen from '../Screens/ProfileScreen/ProfileScreen';
 import ScannerScreen from '../Screens/ScannerScreen/ScannerScreen';
 import { Colors } from '../constant/styles';
 import { Entypo } from '@expo/vector-icons';
-import { FontAwesome5 } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
-import { MaterialIcons } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 
 const Tab = createBottomTabNavigator();
